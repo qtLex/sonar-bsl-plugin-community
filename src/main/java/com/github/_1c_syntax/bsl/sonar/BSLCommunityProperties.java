@@ -42,6 +42,7 @@ public final class BSLCommunityProperties {
   public static final String LANG_SERVER_CONFIGURATION_PATH_KEY = "sonar.bsl.languageserver.configurationPath";
   public static final String LANG_SERVER_OVERRIDE_CONFIGURATION_KEY = "sonar.bsl.languageserver.overrideConfiguration";
   public static final String LANG_SERVER_REPORT_PATH_KEY = "sonar.bsl.languageserver.reportPaths";
+  public static final String GENERIC_ISSUES_REPORT_PATH_KEY = "sonar.bsl.languageserver.genericIssuesReportPaths";
   public static final String BSL_FILE_EXTENSIONS_KEY = "sonar.bsl.file.suffixes";
   public static final String BSL_CALCULATE_LINE_TO_COVER_KEY = "sonar.bsl.calculateLineCover";
 
@@ -140,6 +141,16 @@ public final class BSLCommunityProperties {
       PropertyDefinition.builder(LANG_SERVER_REPORT_PATH_KEY)
         .name("BSL Language Server Report Files")
         .description("Paths (absolute or relative) to xml files with BSL Language Server diagnostics")
+        .defaultValue("")
+        .category(EXTERNAL_ANALYZERS_CATEGORY)
+        .subCategory(BSL_SUBCATEGORY)
+        .onQualifiers(Qualifiers.PROJECT)
+        .multiValues(true)
+        .index(0)
+        .build(),
+      PropertyDefinition.builder(GENERIC_ISSUES_REPORT_PATH_KEY)
+        .name("Generic issues report files")
+        .description("Paths (absolute or relative) to json files with Generic issues")
         .defaultValue("")
         .category(EXTERNAL_ANALYZERS_CATEGORY)
         .subCategory(BSL_SUBCATEGORY)

@@ -59,7 +59,6 @@ public class LanguageServerDiagnosticsLoaderSensor implements Sensor {
   public LanguageServerDiagnosticsLoaderSensor(final SensorContext context) {
     this.context = context;
     this.issueLoader = new IssuesLoader(context);
-
   }
 
   @Override
@@ -138,6 +137,5 @@ public class LanguageServerDiagnosticsLoaderSensor implements Sensor {
       return null;
     }
   }
-
 
 }
